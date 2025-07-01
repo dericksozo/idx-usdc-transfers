@@ -1,11 +1,12 @@
-import { pgTable as table } from "drizzle-orm/pg-core";
-import { db } from "@duneanalytics/sim-idx";
 
-export const poolCreated = table("pool_created", {
+// Generated file. Do not edit manually.
+import { pgEnum, pgTable as table } from "drizzle-orm/pg-core";
+import * as t from "drizzle-orm/pg-core";
+import { db, types } from "@duneanalytics/sim-idx";
+
+export const usdcTransfer = table("usdc_transfer", {
   chainId: db.uint64('chain_id'),
-  caller: db.address('caller'),
-  pool: db.address('pool'),
-  token0: db.address('token0'),
-  token1: db.address('token1'),
-  fee: db.uint24('fee'),
+  from: db.address('from'),
+  to: db.address('to'),
+  value: db.uint256('value'),
 })
